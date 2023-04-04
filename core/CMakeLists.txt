@@ -1,0 +1,16 @@
+set(TARGET_NAME "Core")
+file(GLOB CORE_H *.h)
+file(GLOB CORE_CPP *.cpp)
+
+add_library(${TARGET_NAME}  ${CORE_H}  ${CORE_CPP})
+
+target_include_directories(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+set_target_properties( ${TARGET_NAME} PROPERTIES OUTPUT_NAME_DEBUG "${TARGET_NAME}")
+set_target_properties( ${TARGET_NAME} PROPERTIES PREFIX "")
+set_target_properties( ${TARGET_NAME} PROPERTIES FOLDER "")
+
+set_target_properties( ${TARGET_NAME} PROPERTIES 
+        ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR}
+        LIBRARY_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR}
+        RUNTIME_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR})
