@@ -10,7 +10,7 @@ class Application
 {
 public:
     void Init();
-    void Excute();
+    bool Excute();
     void Shutdown();
 
 private:

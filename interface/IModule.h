@@ -17,7 +17,7 @@ public:
     virtual ~IModule()
     {
     }
-
+    // assign IModule Pointer
     virtual bool Awake()
     {
         return true;

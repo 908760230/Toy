@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include "SystemWinPlugin.h"
 
 namespace Toy
 {
@@ -33,7 +34,7 @@ bool PluginManager::LoadPlugin()
 {
 #ifndef DYNAMIC_DLL
     CREATE_PLUGIN(this, LogPlugin);
-    // CREATE_PLUGIN(this, TutorialPlugin);
+    CREATE_PLUGIN(this, SystemWinPlugin);
 #endif // !DYNAMIC_DLL        CheckStaticPlugin();
 
     std::cout << "----LoadPlugin----" << std::endl;
@@ -47,7 +48,7 @@ bool PluginManager::LoadPlugin()
     }
 
 #ifndef DYNAMIC_DLL
-    CheckStaticPlugin();
+    //CheckStaticPlugin();
 #endif // !DYNAMIC_DLL
 
     return true;

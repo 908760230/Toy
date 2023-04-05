@@ -15,9 +15,9 @@ void Application::Init()
     mPluginManager->ReadyExecute();
 }
 
-void Application::Excute()
+bool Application::Excute()
 {
-    mPluginManager->Execute();
+    return mPluginManager->Execute();
 }
 
 void Application::Shutdown()

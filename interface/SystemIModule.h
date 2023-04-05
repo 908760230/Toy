@@ -9,7 +9,8 @@ class SystemIModule : public IModule
 {
 public:
     virtual void run()       = 0;
-    virtual void pollEvent() = 0;
+    virtual bool pollEvent() = 0;
+    virtual void resize(int w, int h) = 0;
     // virtual void processID() = 0;
 };
 } // namespace Toy
