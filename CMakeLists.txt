@@ -35,4 +35,3 @@ add_subdirectory(plugin)
 add_subdirectory(main)
 add_subdirectory(interface)
 add_subdirectory(core)
-

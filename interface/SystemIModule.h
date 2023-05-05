@@ -12,6 +12,19 @@ public:
     virtual bool pollEvent() = 0;
     virtual void resize(int w, int h) = 0;
     // virtual void processID() = 0;
+    int width() const
+    {
+        return m_width;
+    }
+
+    int height() const
+    {
+        return m_height;
+    }
+
+protected:
+    int m_width  = 800;
+    int m_height = 600;
 };
 } // namespace Toy
 

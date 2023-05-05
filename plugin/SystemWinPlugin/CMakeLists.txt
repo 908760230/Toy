@@ -1,8 +1,8 @@
 set(TARGET_NAME "SystemWinPlugin")
-file(GLOB SPDLOG_PLUGIN_H *.h)
-file(GLOB SPDLOG_PLUGIN_CPP *.cpp)
+file(GLOB SYSTEMWIN_PLUGIN_H *.h)
+file(GLOB SYSTEMWIN_PLUGIN_CPP *.cpp)
 
-add_library(${TARGET_NAME}  ${SPDLOG_PLUGIN_H}  ${SPDLOG_PLUGIN_CPP})
+add_library(${TARGET_NAME}  ${SYSTEMWIN_PLUGIN_H}  ${SYSTEMWIN_PLUGIN_CPP})
 
 target_include_directories(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(${TARGET_NAME} Core)

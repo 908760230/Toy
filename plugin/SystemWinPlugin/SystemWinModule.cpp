@@ -21,21 +21,22 @@ bool SystemWinModule::Init()
     winclass.lpszClassName = "WINCLASS";
     winclass.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
     if (!RegisterClassEx(&winclass)) return false;
-    return true;
-}
-bool SystemWinModule::AfterInit()
-{
     hwnd = CreateWindowEx(NULL,                                   // extended style
-                          "WINCLASS",                            // class
-                          "windows",                             // title
+                          "WINCLASS",                             // class
+                          "windows",                              // title
                           WS_OVERLAPPEDWINDOW | WS_VISIBLE, 0, 0, // initial x,y
-                          m_width, m_height,                     // initial width, height
+                          m_width, m_height,                      // initial width, height
                           NULL,                                   // handle to parent
                           NULL,                                   // handle to menu
                           hinstance,                              // instance of this application
                           NULL);
 
     if (!hwnd) return false;
+    return true;
+}
+bool SystemWinModule::AfterInit()
+{
+    return true;
 }
 bool SystemWinModule::Execute()
 {
@@ -55,6 +56,8 @@ bool SystemWinModule::pollEvent()
 }
 void SystemWinModule::resize(int w, int h)
 {
+    m_width = w;
+    m_height = h;
 }
 LRESULT SystemWinModule::WindowProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 {

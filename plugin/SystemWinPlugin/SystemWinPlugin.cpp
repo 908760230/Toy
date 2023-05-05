@@ -1,6 +1,6 @@
 #include "SystemWinPlugin.h"
 #include "Platform.h"
-#include "SystemIModule.h"
+#include "SystemWinIModule.h"
 #include "SystemWinModule.h"
 
 using namespace Toy;
@@ -25,10 +25,10 @@ std::string SystemWinPlugin::GetPluginName()
 
 void SystemWinPlugin::Install()
 {
-    REGISTER_MODULE(pPluginManager, SystemIModule, SystemWinModule);
+    REGISTER_MODULE(pPluginManager, SystemWinIModule, SystemWinModule);
 }
 
 void SystemWinPlugin::Uninstall()
 {
-    UNREGISTER_MODULE(pPluginManager, SystemIModule, SystemWinModule)
+    UNREGISTER_MODULE(pPluginManager, SystemWinIModule, SystemWinModule)
 }

@@ -44,5 +44,6 @@
 #endif
 
 #define GET_CLASS_NAME(className) (#className)
+#define NOMINMAX
 
 #endif // !TOY_PLATFORM_H
